@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="dashboard.css">
+    </head>
+    <body>
+        <div class = flex-container>
+            <div class="left-sidebar">
+                <p>hello,<div id="getName"></div></p><br>
+                <div>Dashboard</div>
+                <a href="User.html">Users</a><br>
+                <a href="UserSession.html">Login Sesion</a><br>
+                <a href="login.html">LogOut</a>
+            </div>
+            <div class="right-sidebar">
+                <div>Dashboard</div>
+                <div class="flex-container">
+                    <div class="left-box">User < 18 Years</div>
+                    <div class="middle-box">User 18-50 Years Users</div>
+                    <div class="right-box">Users >50 Years </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("getName").innerHTML= sessionStorage.getItem("storeRegisterName");
+        </script>
+
+    </body>
+</html>

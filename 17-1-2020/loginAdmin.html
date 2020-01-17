@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>login page</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <h2>Login</h2>
+            <tr>
+                <td><input type="email" name="email" id="loginEmail" placeholder="Email"></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="password" id="loginPassword" placeholder="Password"></td>
+            </tr>
+            <tr>
+                <td><a href="Dashboard.html"><input type="button" name="login" value="Login" onclick="loginValidation()"></a></td>
+            </tr>
+        </table>
+    </form>
+
+
+    <script>
+        function loginValidation() {
+            var valueOfLoginEmail = document.getElementById("loginEmail").value;
+            var valueOfLoginPassword = document.getElementById("loginPassword").value;
+            if (/^[a-zA-Z-0-9.]+\@[a-zA-Z-0-9.]+\.[a-z]{2,3}$/.test(valueOfLoginEmail)) {
+                sessionStorage.setItem("storeLoginEmail", valueOfLoginEmail);
+                console.log(sessionStorage.getItem("storeLoginEmail"));
+            } else {
+                alert("Mail Adress Invalid Format");
+            }
+
+            if (/^[a-zA-Z0-9]+\W+[a-zA-Z0-9]+$/.test(valueOfLoginPassword)) {
+                sessionStorage.setItem("storeLoginPassword", valueOfLoginPassword);
+                console.log(sessionStorage.getItem("storeLoginPassword"));
+            } else {
+                alert("Password Invalid Format");
+            }
+
+            var checkLoginEmail = sessionStorage.getItem("storeLoginEmail");
+            var checkLoginPassword = sessionStorage.getItem("storeLoginPassword");
+            var checkRegisterEmail = sessionStorage.getItem("storeRegisterEmail");
+            var checkRegisterPassword = sessionStorage.getItem("storeRegisterPassword");
+            console.log(checkRegisterPassword);
+            if (checkLoginEmail == checkRegisterEmail) {
+                if (checkLoginPassword == checkRegisterPassword) {
+                    alert("Login succefully");
+                } else {
+                    alert("Login Password and Register Password not match");
+                }
+            } else {
+                alert("Login Email and Register Email not match");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

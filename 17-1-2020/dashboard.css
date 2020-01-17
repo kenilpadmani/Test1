@@ -1,0 +1,39 @@
+.flex-container{
+    display: flex;
+    margin: 10px;
+}
+
+.left-sidebar{
+    border: 1px solid springgreen;
+    background-color: steelblue;
+    height: 500px;
+    width: 200px;
+    text-align: center;
+
+}
+
+.right-sidebar{
+    border: 1px solid tan;
+    height: 500px;
+}
+
+.left-box{
+    text-align: center;
+    border: 1px solid black;
+    width: 150px;
+    height: 100px;
+}
+
+.middle-box{
+    text-align: center;
+    border: 1px solid gray;
+    width: 170px;
+    height: 100px;
+}
+
+.right-box{
+    text-align: center;
+    border: 1px solid gold;
+    width: 150px;
+    height: 100px;
+}

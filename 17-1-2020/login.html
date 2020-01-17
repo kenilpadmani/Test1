@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>login page</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <h2>Login</h2>
+            <tr>
+                <td><input type="email" name="email" id="loginEmail" placeholder="Email"></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="password" id="loginPassword" placeholder="Password"></td>
+            </tr>
+            <tr>
+                <td><input type="button" name="login" value="Login" onclick="messageBox()"></td>
+            </tr>
+            <tr>
+                <td>OR</td>
+            </tr>
+            <tr>
+                <td><a href="Regitstration.html"><input type="button" name="register" value="Register Now"></a></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function messageBox() {
+            alert("First Register. Only admin user");
+        }
+    </script>
+</body>
+
+
+</html>

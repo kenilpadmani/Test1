@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title>Regitstration Page</title>
+</head>
+
+<body>
+    <script>
+        function RegitstrationValidation() {
+            var valueOfRegisterName = document.getElementById("registerName").value;
+            var valueOfRegisterEmail = document.getElementById("registerEmail").value;
+            var valueOfRegisterPassword = document.getElementById("registerPassword").value;
+            var valueOfRegisterConfirmPassword = document.getElementById("registerConfirmPassword").value;
+            var checkTerm = document.getElementById("Conditions").value;
+
+            //Name validation
+            if (/^[a-zA-Z]+$/.test(valueOfRegisterName)) {
+                sessionStorage.setItem("storeRegisterName", valueOfRegisterName);
+                console.log(sessionStorage.getItem("storeRegisterName"))
+            } else {
+                alert("Register Name is Invalid");
+            }
+
+            //Email validation
+            if (/^[a-zA-Z-0-9.]+\@[a-zA-Z-0-9.]+\.[a-z]{2,3}$/.test(valueOfRegisterEmail)) {
+                sessionStorage.setItem("storeRegisterEmail", valueOfRegisterEmail);
+                console.log(sessionStorage.getItem("storeRegisterEmail"));
+            } else {
+                alert("Mail Adress Invalid Format");
+            }
+
+            //Password validation
+            if (/^[a-zA-Z0-9]+\W+[a-zA-Z0-9]+$/.test(valueOfRegisterPassword)) {
+                console.log("valueOfRegisterPassword");
+                sessionStorage.setItem("storeRegisterPassword", valueOfRegisterPassword);
+                console.log(sessionStorage.getItem("storeRegisterPassword"));
+            } else {
+                alert("Password Invalid Format");
+            }
+
+            //ConfirmPassword validation
+            if (/^[a-zA-Z0-9]+\W+[a-zA-Z0-9]+$/.test(valueOfRegisterConfirmPassword)) {
+                var x = sessionStorage.getItem("storeRegisterPassword");
+                if (valueOfRegisterConfirmPassword === x) {
+                    sessionStorage.setItem("storeRegisterConfirmPassword", valueOfRegisterConfirmPassword);
+                    console.log(sessionStorage.getItem("storeRegisterConfrimPassword"));
+                } else {
+                    alert("Confirmpassword not match with password");
+                }
+
+            } else {
+                alert("ConfirmPassword Invalid Format");
+            }
+
+            if (checkTerm.checked) {
+                localStorage.setItem("storeRegisterCheck",checkTerm);
+                
+            }else{
+                alert("Tic the checkbox");
+            }
+        }
+    </script>
+
+
+    <form>
+        <table>
+            <tr>
+                <td>Regitstration</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name" id="registerName" placeholder="Name"></td>
+            </tr>
+            <tr>
+                <td><input type="email" name="email" id="registerEmail" placeholder="Email"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" name="password" id="registerPassword" placeholder="Password">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="password" name="password" id="registerConfirmPassword" placeholder="Confirm Password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option>Select City</option>
+                        <option>Ahmedabad</option>
+                        <option>Surat</option>
+                        <option>Rajkot</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option>Select State</option>
+                        <option>Gujarat</option>
+                        <option>Goa</option>
+                        <option>Uttarpardesh</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="Conditions" id="Conditions" value="Terms & Conditions">Terms &
+                    Conditions
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="loginAdmin.html"><input type="button" name="register" value="Register"
+                            onclick="RegitstrationValidation()"></a>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    
+
+</body>
+
+</html>

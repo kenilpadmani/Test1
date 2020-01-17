@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>User</title>
+        <link rel="stylesheet" type="text/css" href="dashboard.css">
+
+    </head>
+    <body>
+        <div class = flex-container>
+            <div class="left-sidebar">
+                <p>hello,<div id="getName"></div></p><br>
+                <div>Dashboard</div>
+                <a href="User.html">Users</a><br>
+                <a href="UserSession.html">Login Sesion</a><br>
+                <a href="login.html">LogOut</a>
+            </div>
+            <div class="right-sidebar">
+                <div>Add User</div>
+                <table>
+                    <tr>
+                        <td><input type="text" id="nameOfUser" name="name" placeholder="Name"></td>
+                        <td><input type="email" id="emailOfUser" name="email" placeholder="Email"></td>
+                        <td><input type="password" id="passwordOfUser" name="password" placeholder="Password"></td>
+                        <td><input type="number" id="birthdateOfUser" name="birthdate" placeholder="BirthDate only year"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="Add User" value="Add User" onclick="checkValidationAndPrint()"></td>
+                    </tr>
+                </table>
+                <div>User List</div>
+                <table id="showData" border='1'>
+                    <tr>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Password</td>
+                        <td>BirthDate</td>
+                        <td>Age</td>
+                        <td>Actions</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <script>
+            document.getElementById("getName").innerHTML =sessionStorage.getItem("storeRegisterName");
+        </script>
+
+        <script src="Add_User.js"></script>
+
+    </body>
+</html>
